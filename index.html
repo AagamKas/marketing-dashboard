@@ -103,6 +103,103 @@
   }
   .week-node:hover { transform: scale(1.08); }
   .week-node.event { border-color: #E88A1A; color: #E88A1A; }
+  /* Uplift: subtle bubble tint + strong horizontal band behind the row */
+  .week-node.uplift {
+    background: #dcfce7 !important;
+    border-color: #16a34a !important;
+    color: #14532d !important;
+  }
+  .week-node.uplift.event {
+    background: #dcfce7 !important;
+    border-color: #E88A1A !important;
+    color: #b45309 !important;
+  }
+  .uplift-band {
+    position: absolute; left: 0; right: 0;
+    top: 22px; height: 46px;
+    z-index: 0; pointer-events: none;
+    display: grid; grid-template-columns: repeat(9, 1fr); gap: 2px;
+  }
+  .uplift-band .u-cell {
+    border-radius: 6px;
+    background: transparent;
+    border: 2px dashed transparent;
+  }
+  .uplift-band .u-cell.on {
+    background: rgba(134,239,172,.35);
+    border: 2px dashed #16a34a;
+  }
+  .tl-legend {
+    display: none;   /* moved into the business summary card */
+  }
+  /* Business summary card */
+  .biz-summary {
+    background: linear-gradient(90deg, #f0fdf4 0%, #ffffff 100%);
+    border-left: 4px solid #16a34a;
+    padding: 10px 14px; border-radius: 6px;
+    margin-bottom: 14px;
+    display: flex; align-items: center; gap: 14px;
+    font-size: 12.5px; color: #14532d; line-height: 1.4;
+  }
+  .biz-summary.none {
+    background: linear-gradient(90deg, #fef2f2 0%, #ffffff 100%);
+    border-left-color: #dc2626; color: #7f1d1d;
+  }
+  .biz-summary .sw {
+    display: inline-block; width: 22px; height: 12px; border-radius: 3px;
+    background: rgba(134,239,172,.6); border: 2px dashed #16a34a; flex-shrink: 0;
+  }
+  .biz-summary .weeks {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    background: #16a34a; color: #fff; font-weight: 700; font-size: 11px; margin: 0 3px;
+  }
+  .biz-summary.none .weeks { background: #dc2626; }
+  .biz-summary b { color: #1F4E78; font-weight: 700; }
+  /* Compact week strip above business metrics chart */
+  .biz-week-strip {
+    display: grid; grid-template-columns: repeat(9, 1fr); gap: 4px;
+    margin: 6px 0 12px 0; padding: 6px 8px;
+    background: #f7f9fc; border-radius: 6px;
+  }
+  .biz-week-strip .bw {
+    display: flex; flex-direction: column; align-items: center; gap: 3px;
+    padding: 4px 2px; border-radius: 4px; font-size: 10px; font-weight: 700;
+    color: #6b7684; background: transparent;
+  }
+  .biz-week-strip .bw.uplift {
+    background: rgba(134,239,172,.35); color: #14532d;
+    border: 1.5px dashed #16a34a;
+  }
+  .biz-week-strip .bw.event .dot {
+    display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+    background: #E88A1A; margin-top: 2px;
+  }
+  .biz-strip-legend {
+    display: flex; align-items: center; gap: 18px;
+    margin: -4px 0 10px 0; font-size: 11px; color: #475569;
+    flex-wrap: wrap;
+  }
+  .biz-strip-legend .bl-item { display: inline-flex; align-items: center; gap: 6px; }
+  .biz-strip-legend .bl-sw {
+    display: inline-block; width: 24px; height: 12px; border-radius: 3px;
+  }
+  .biz-strip-legend .uplift-sw {
+    background: rgba(134,239,172,.35);
+    border: 1.5px dashed #16a34a;
+  }
+  .biz-strip-legend .event-sw {
+    background: #f8fafc; border: 1px solid #cbd5e1;
+    position: relative;
+  }
+  .biz-strip-legend .event-sw::after {
+    content: '';
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+    width: 5px; height: 5px; border-radius: 50%; background: #E88A1A;
+  }
+  .biz-strip-legend .bl-item b { color: #14532d; font-weight: 700; }
+  .biz-strip-legend .bl-hint {
+    color: #94a3b8; font-style: italic; font-size: 10.5px; margin-left: auto;
+  }
   .track-line {
     position: absolute; left: 5.5%; right: 5.5%;
     top: calc(50% + 4px); height: 4px; background: #2C7A47;
@@ -264,7 +361,7 @@
   .attribution-disclaimer .dot { color: #ffd166; font-weight: 700; margin-right: 4px; }
 </style>
 </head>
-<body>
+<body class="scrolled">
 <div class="container">
 
   <!-- ============ CITY TABS ============ -->
@@ -300,13 +397,25 @@
     <span class="subtitle">Timeline of interventions and marketing/business impact</span>
   </div>
 
+  <!-- ============ SUMMARY (moved to top) ============ -->
+  <div class="summary-panel" id="summaryPanel">
+    <div class="summary-header">
+      <span class="summary-icon">✦</span>
+      <h2>Summary</h2>
+    </div>
+    <ul class="summary-list" id="summaryList"><li><span class="bullet"></span><div><b>Reach exploded after auction-based buy</b> — Wk 4-5 reach 98K (27%) → Wk 6-9 <b>824K (238%), ~8x jump</b> post shift</div></li><li><span class="bullet"></span><div><b>Post shift to auction, both ADT and EPP USD increased</b> — <b>EPP USD +80pp</b> (from +97pp Wk 5 to +177pp Wk 9); ADT improved from −6.9pp (Wk 5) to peak +0.9pp (Wk 8). During the same period (Wk 5-6) <b>influencer marketing was also live</b>, so lift is attributable to auction + influencer combo (not isolable)</div></li></ul>
+    <div class="attribution-disclaimer">
+      <span class="dot">†</span> Attribution to a specific intervention is not clear — multiple levers overlap across weeks, so the observed lift cannot be isolated to one lever.
+    </div>
+  </div>
+
   <!-- ============ TIMELINE ============ -->
-  <div class="timeline">
+  <div class="timeline compact">
     <div class="month-row">
       <div class="month-band" style="flex: 5;">MONTH 1 · MAY 1 – MAY 31</div>
       <div class="month-band" style="flex: 4;">MONTH 2 · JUN 1 – JUN 28</div>
     </div>
-    <div class="week-strip" id="weekStrip"><div class="track-line"></div><div class="week-cell">
+    <div class="week-strip" id="weekStrip"><div class="uplift-band"><div class="u-cell"></div><div class="u-cell"></div><div class="u-cell"></div><div class="u-cell"></div><div class="u-cell"></div><div class="u-cell on"></div><div class="u-cell on"></div><div class="u-cell on"></div><div class="u-cell on"></div></div><div class="track-line"></div><div class="week-cell">
       <div class="week-label">WEEK 1</div>
       <div class="week-node event">W1</div>
       <div class="connector"></div>
@@ -328,21 +437,22 @@
       <div class="connector"></div>
     </div><div class="week-cell">
       <div class="week-label">WEEK 6</div>
-      <div class="week-node event">W6</div>
+      <div class="week-node event uplift">W6</div>
       <div class="connector"></div>
     </div><div class="week-cell">
       <div class="week-label">WEEK 7</div>
-      <div class="week-node event">W7</div>
+      <div class="week-node event uplift">W7</div>
       <div class="connector"></div>
     </div><div class="week-cell">
       <div class="week-label">WEEK 8</div>
-      <div class="week-node">W8</div>
+      <div class="week-node uplift">W8</div>
       
     </div><div class="week-cell">
       <div class="week-label">WEEK 9</div>
-      <div class="week-node">W9</div>
+      <div class="week-node uplift">W9</div>
       
     </div></div>
+    <div class="tl-legend" id="tlLegend"></div>
     <div class="event-row" id="eventRow"><div>
         <div class="event-card">
           <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><line x1="7" y1="4" x2="7" y2="20"></line><line x1="17" y1="4" x2="17" y2="20"></line><line x1="2" y1="8" x2="7" y2="8"></line><line x1="2" y1="16" x2="7" y2="16"></line><line x1="17" y1="8" x2="22" y2="8"></line><line x1="17" y1="16" x2="22" y2="16"></line></svg></div>
@@ -388,6 +498,16 @@
         </div></div><div></div><div></div></div>
   </div>
 
+  <!-- ============ BUSINESS SUMMARY (per-city text callout — at top) ============ -->
+  <div class="biz-summary" id="bizSummary"><span class="sw"></span><div><b>Business uplift weeks:</b> <span class="weeks">W6</span><span class="weeks">W7</span><span class="weeks">W8</span><span class="weeks">W9</span> &nbsp;&nbsp; <b>EPP USD uplift Wk 6-9</b> (+138 → +177pp) driven by auction-based buy Wk 6. ADT stayed flat/negative throughout.</div></div>
+
+  <!-- ============ DIVIDER: MARKETING DEEP DIVE ============ -->
+  <div style="display:flex; align-items:center; gap:12px; margin: 20px 0 14px 0;">
+    <div style="flex:1; height:2px; background:linear-gradient(90deg, transparent, #1F4E78, transparent);"></div>
+    <div style="font-size:12px; font-weight:700; color:#1F4E78; letter-spacing:1.5px; text-transform:uppercase; padding:4px 12px; background:#eaf0f8; border-radius:4px;">Marketing Deep Dive ↓</div>
+    <div style="flex:1; height:2px; background:linear-gradient(90deg, transparent, #1F4E78, transparent);"></div>
+  </div>
+
   <!-- ============ META MARKETING METRICS ============ -->
   <div class="chart-panel" id="mktPanel1">
     <h2 id="mktTitle1">Meta Marketing Metrics — Reach %, Frequency &amp; 3-sec VTR</h2>
@@ -401,9 +521,9 @@
   <!-- ============ SECOND META CHART (only P3/P4/P5) ============ -->
   <div class="chart-panel" id="mktPanel2" style="display: none;">
     <h2 id="mktTitle2">Meta Marketing Metrics — Pricing film (26s, also communicates about EPP)</h2>
-    <div class="legend-row" id="legendRowMkt2"><div class="legend-item"><span class="legend-swatch" style="background:rgb(59,130,246);"></span>Reach %</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(139,92,246);"></span>Frequency</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(217,119,6);"></span>3-sec VTR %</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(16,185,129);"></span>75% VTR %</div><div class="legend-note">Universe: M1 549.3K → M2 506.3K · Left axis: Reach % · Right axis: Frequency &amp; VTR %</div></div>
+    <div class="legend-row" id="legendRowMkt2"><div class="legend-item"><span class="legend-swatch" style="background:rgb(59,130,246);"></span>Reach %</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(139,92,246);"></span>Frequency</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(217,119,6);"></span>3-sec VTR %</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(16,185,129);"></span>75% VTR %</div><div class="legend-note">Universe: M1 416.8K → M2 398.7K · Left axis: Reach % · Right axis: Frequency &amp; VTR %</div></div>
     <div class="chart-area" style="height: 320px;">
-      <canvas id="chartMkt2" width="1080" height="240" style="display: block; box-sizing: border-box; height: 320px; width: 1441px;"></canvas>
+      <canvas id="chartMkt2" style="box-sizing: border-box; display: block; height: 320px; width: 1441px;" width="1080" height="240"></canvas>
     </div>
     <div class="disclaimer" id="mktDisclaimer2"><span class="dot">*</span> <b>Pricing film (26s)</b> ran alongside <b>EPP film (21s)</b>. Reach/Freq/VTR shown separately per creative. Wk 1-3 point reuses the Brand film (45s) baseline so both charts share the same x-axis. Pricing communication appears to have <b>resonated better</b> based on reach and 75% completion depth.</div>
   </div>
@@ -509,22 +629,17 @@
   </div>
 
   <!-- ============ BUSINESS METRICS ============ -->
-  <div class="chart-panel">
-    <h2>Business Metrics — Overall ADT &amp; EPP USD (DiD vs Control)</h2>
+  <div class="chart-panel" style="border-top: 4px solid #2C7A47;">
+    <h2 style="color:#2C7A47;">Business Metrics — Overall ADT &amp; EPP USD (DiD vs Control)</h2>
+    <!-- Compact week strip reference so the chart's x-axis lines up with the events + uplift shading -->
+    <div class="biz-week-strip" id="bizWeekStrip"><div class="bw event">W1<span class="dot"></span></div><div class="bw event">W2<span class="dot"></span></div><div class="bw">W3</div><div class="bw event">W4<span class="dot"></span></div><div class="bw event">W5<span class="dot"></span></div><div class="bw uplift event">W6<span class="dot"></span></div><div class="bw uplift event">W7<span class="dot"></span></div><div class="bw uplift">W8</div><div class="bw uplift">W9</div></div>
+    <div class="biz-strip-legend">
+      <span class="bl-item"><span class="bl-sw uplift-sw"></span><b>Business uplift week</b></span>
+      <span class="bl-item"><span class="bl-sw event-sw"></span>Marketing event this week</span>
+      <span class="bl-item bl-hint">↳ hover over the chart to see week-by-week DiD values</span>
+    </div>
     <div class="legend-row" id="legendRowBiz"><div class="legend-item"><span class="legend-swatch" style="background:rgb(31,78,120);"></span>Overall ADT DiD (pp)</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(44,122,71);"></span>EPP USD DiD (pp)</div><div class="legend-note">Left axis: Overall ADT DiD · Right axis: EPP USD · All vs Control (pp)</div></div>
     <div class="chart-area" style="height: 320px;"><canvas id="chartBiz" style="box-sizing: border-box; display: block; height: 320px; width: 1441px;" width="1080" height="240"></canvas></div>
-  </div>
-
-  <!-- ============ SUMMARY ============ -->
-  <div class="summary-panel" id="summaryPanel">
-    <div class="summary-header">
-      <span class="summary-icon">✦</span>
-      <h2>Summary</h2>
-    </div>
-    <ul class="summary-list" id="summaryList"><li><span class="bullet"></span><div><b>Reach exploded after auction-based buy</b> — Wk 4-5 reach 98K (27%) → Wk 6-9 <b>824K (238%), ~8x jump</b> post shift</div></li><li><span class="bullet"></span><div><b>Post shift to auction, both ADT and EPP USD increased</b> — <b>EPP USD +80pp</b> (from +97pp Wk 5 to +177pp Wk 9); ADT improved from −6.9pp (Wk 5) to peak +0.9pp (Wk 8). During the same period (Wk 5-6) <b>influencer marketing was also live</b>, so lift is attributable to auction + influencer combo (not isolable)</div></li></ul>
-    <div class="attribution-disclaimer">
-      <span class="dot">†</span> Attribution to a specific intervention is not clear — multiple levers overlap across weeks, so the observed lift cannot be isolated to one lever.
-    </div>
   </div>
 
 </div>
@@ -562,6 +677,8 @@ const icons = {
 const CITIES = {
   Mumbai: {
     pilot: 'P1',
+    uplift_weeks: [],
+    biz_summary: '<b>No consistent business uplift pattern</b> — ADT held flat +9 to +17pp with no dramatic spike. EPP USD stepped up Wk 5 (+93pp) but stayed level. Reach already at ceiling; hard market to move.',
     universeK: 685.3, universeK_m1: 685.3, universeK_m2: 620.5,
     events: {
       1: { items: ['Brand film went live', 'Search went live', 'Influencer marketing went live (burst 1)'], icon: 'film', type: 'launch' },
@@ -610,6 +727,8 @@ const CITIES = {
   },
   Lucknow: {
     pilot: 'P1',
+    uplift_weeks: [4, 5, 6, 7],
+    biz_summary: '<b>ADT + EPP USD uplift Wk 4-7</b> — ADT climbed +17 → +39pp Wk 7, EPP USD peaked +141pp Wk 6. EPP film + Trade + reach scaling all compounded.',
     universeK: 1000, universeK_m1: 1000, universeK_m2: 1900,
     events: {
       1: { items: ['Brand film went live', 'Search went live'], icon: 'film', type: 'launch' },
@@ -654,6 +773,8 @@ const CITIES = {
   },
   Patna: {
     pilot: 'P1',
+    uplift_weeks: [3, 4, 5, 6, 7],
+    biz_summary: '<b>ADT + EPP USD uplift Wk 3-7</b> — best Pilot 1 city. ADT peaked +40pp Wk 7, EPP USD +150pp Wk 7. Influencer B1 + EPP film + Trade all compounded.',
     universeK: 373.1, universeK_m1: 373.1, universeK_m2: 338.1,
     events: {
       1: { items: ['Brand film went live', 'Search went live', 'Influencer marketing went live'], icon: 'film', type: 'launch' },
@@ -699,6 +820,8 @@ const CITIES = {
   },
   Kolkata: {
     pilot: 'P1',
+    uplift_weeks: [6, 7, 8, 9],
+    biz_summary: '<b>EPP USD uplift Wk 6-9</b> (+138 → +177pp) driven by auction-based buy Wk 6. ADT stayed flat/negative throughout.',
     universeK: 359.2, universeK_m1: 359.2, universeK_m2: 347.1,
     events: {
       1: { items: ['Brand film went live', 'Search went live'], icon: 'film', type: 'launch' },
@@ -747,6 +870,8 @@ const CITIES = {
   // ============ PILOT 2 CITIES ============
   Bangalore: {
     pilot: 'P2',
+    uplift_weeks: [4, 5, 6],
+    biz_summary: '<b>Peak lift Wk 4-6 post Pricing film launch</b> — ADT +26pp steady, Disc Rec climbed +73→+84pp Wk 5, Disc Core +32pp Wk 5. Uplift moderates from Wk 7 onwards.',
     universeK: 563.1, universeK_m1: 563.1, universeK_m2: 524.3,
     events: {
       1: { items: ['Brand film went live', 'Search went live'], icon: 'film', type: 'launch' },
@@ -794,6 +919,8 @@ const CITIES = {
 
   Noida: {
     pilot: 'P2',
+    uplift_weeks: [4, 5, 6, 7],
+    biz_summary: '<b>Dramatic Wk 4 step-up, sustained Wk 4-7</b> — ADT jumped +15→+43pp Wk 4, Disc Rec +38→+75pp, Disc Core +11→+45pp coincident with Pricing film + 6 mall trade cluster. Softens from Wk 8.',
     universeK: 696.9, universeK_m1: 696.9, universeK_m2: 693.0,
     events: {
       1: { items: ['Brand film went live', 'Search went live'], icon: 'film', type: 'launch' },
@@ -842,6 +969,8 @@ const CITIES = {
 
   Raipur: {
     pilot: 'P2',
+    uplift_weeks: [1, 2, 3],
+    biz_summary: '<b>Cleanest uplift Wk 1-3 (influencer window)</b> — ADT −4→+17→+8pp, Disc Rec +29→+55→+64pp, Disc Core +2→+35→+23pp. Only P2 city with isolated influencer read (no film/trade overlap yet).',
     universeK: 150.6, universeK_m1: 150.6, universeK_m2: 144.4,
     events: {
       1: { items: ['Brand film went live', 'Search went live', 'Influencer marketing went live', 'Auction-based buy live from day 1'], icon: 'person', type: 'launch' },
@@ -888,6 +1017,8 @@ const CITIES = {
   // ============ PILOT 3 ============
   Delhi: {
     pilot: 'P3',
+    uplift_weeks: [5, 6, 7],
+    biz_summary: '<b>Uplift Wk 5-7</b> — ADT climbed +12→+19pp, EPP USD +63→+58→+63pp, Disc Rec +30→+40→+33pp. Post EPP + Pricing launch peak window.',
     universeK: 612.3, universeK_m1: 612.3, universeK_m2: 508.2,
     events: {
       1: { items: ['Brand film went live', 'Search went live'], icon: 'film', type: 'launch' },
@@ -931,10 +1062,10 @@ const CITIES = {
       ]}
     },
     biz: {
-      adt:      [null, null,  +6.4,  +3.6, +12.1, +11.5, +19.1, +17.2, +13.9],
-      epp:      [null, null, +38.1, +46.1, +63.1, +58.1, +62.5, +62.5, +44.0],
-      discCore: [null, null, +15.8, +31.7, +27.9, +17.4, +28.4, +28.4, +30.3],
-      discRec:  [null, null, +26.0, +48.7, +30.4, +40.4, +32.6, +34.2, +29.7],
+      adt:      [ +6.9,  +3.7,  +6.4,  +3.6, +12.1, +11.5, +19.0, +17.2, +13.9],
+      epp:      [+27.7, +25.2, +38.1, +46.1, +63.1, +58.1, +62.5, +62.5, +44.0],
+      discCore: [ +9.0, +10.6, +15.8, +31.8, +27.8, +17.4, +28.4, +28.4, +30.3],
+      discRec:  [ +8.0,  +3.8, +26.0, +48.8, +30.0, +40.4, +32.6, +34.2, +29.7],
     },
     summary: [
       '<b>EPP film reached higher in M1</b> (36.2% vs 5.9% Pricing, Wk 4-5); <b>Pricing film reached higher in M2</b> (72.9% vs 20.6% EPP, Wk 6-7) — reach shifted between months',
@@ -947,6 +1078,8 @@ const CITIES = {
   // ============ PILOT 4 ============
   Gurgaon: {
     pilot: 'P4',
+    uplift_weeks: [5, 6, 7],
+    biz_summary: '<b>Peak lift Wk 5-7</b> — ADT climbed +12→+22pp, EPP USD +91→+64pp, Disc Rec surged to +92pp Wk 6. Best P4 window.',
     universeK: 416.8, universeK_m1: 416.8, universeK_m2: 398.7,
     events: {
       1: { items: ['Brand film went live', 'Search went live'], icon: 'film', type: 'launch' },
@@ -989,9 +1122,9 @@ const CITIES = {
       ]}
     },
     biz: {
-      adt:     [null, null, +14.2,  +6.1, +12.4, +17.6, +21.8, +19.0, +17.5],
-      epp:     [null, null, +75.6, +56.6, +91.4, +63.2, +63.7, +66.7, +55.2],
-      discRec: [null, null, +62.3, +71.3, +74.0, +92.3, +90.9, +74.0, +88.5],
+      adt:     [+17.3, +17.5, +14.1,  +6.1, +12.4, +17.6, +21.8, +19.0, +17.5],
+      epp:     [+79.5, +65.8, +75.6, +56.6, +91.4, +63.2, +63.7, +66.7, +55.2],
+      discRec: [+58.5, +59.6, +63.0, +72.1, +74.4, +92.3, +90.9, +74.0, +88.5],
     },
     summary: [
       '<b>EPP film reached higher in M1</b> (29.8% vs 5.5% Pricing, Wk 4-5); <b>Pricing film reached higher in M2</b> (69.7% vs 13.2% EPP, Wk 6-7) — reach shifted between months',
@@ -1003,6 +1136,8 @@ const CITIES = {
 
   Mysore: {
     pilot: 'P4',
+    uplift_weeks: [6, 7, 8, 9],
+    biz_summary: '<b>Peak convergence Wk 6-9</b> — ADT accelerated from +25→+30pp, EPP USD spiked +108→+132pp Wk 6-7, Disc Rec USD peaked +157pp Wk 8. Wk 1-5 had strong Disc Rec throughout (+66-113pp) but ADT weak.',
     universeK: 227.4, universeK_m1: 227.4, universeK_m2: 211.7,
     events: {
       1: { items: ['Brand film went live', 'Search went live', 'Auction-based buy live from day 1'], icon: 'film', type: 'launch' },
@@ -1044,9 +1179,9 @@ const CITIES = {
       ]}
     },
     biz: {
-      adt:     [null, null,  +7.7, +13.5,  +1.2, +24.8, +24.5, +22.3, +30.4],
-      epp:     [null, null, +68.8, +54.2, +66.8, +107.6,+132.4,+56.8, +93.6],
-      discRec: [null, null, +66.0, +100.1, +107.7,+104.7,+128.3,+157.1,+112.6],
+      adt:     [ +0.8,  -1.0,  +7.7, +13.5,  +1.2, +24.8, +24.5, +22.3, +30.4],
+      epp:     [+64.1, +42.1, +68.8, +54.2, +66.8, +107.6,+132.4,+56.8, +93.6],
+      discRec: [+113.9,+90.1, +66.4, +100.1,+109.5,+104.7,+128.3,+157.1,+112.6],
     },
     summary: [
       '<b>Pricing film reached higher in both months</b> (M1: 700.7% vs 251.6% EPP; M2: 252.3% vs 16.8% EPP) — auction-based buy drove massive Pricing film reach over-index',
@@ -1059,6 +1194,8 @@ const CITIES = {
   // ============ PILOT 5 ============
   Hyderabad: {
     pilot: 'P5',
+    uplift_weeks: [3, 4, 5, 6],
+    biz_summary: '<b>Lift Wk 3-6</b> — ADT +20→+27pp, EPP USD +55→+94pp (peak Wk 6), Disc Core +40→+50pp. Uplift moderates from Wk 7; sharp EPP drop Wk 9 (−28pp) needs investigation.',
     universeK: 549.3, universeK_m1: 549.3, universeK_m2: 506.3,
     events: {
       1: { items: ['Brand film went live', 'Search went live'], icon: 'film', type: 'launch' },
@@ -1102,9 +1239,9 @@ const CITIES = {
       ]}
     },
     biz: {
-      adt:      [null, null, +19.7, +22.3, +26.7, +22.0, +23.7, +23.2, +19.1],
-      epp:      [null, null, +55.4, +55.1, +80.0, +94.3, +81.6, +69.3, -28.1],
-      discCore: [null, null, +39.7, +49.5, +50.0, +21.5, +50.3, +48.7, +12.8],
+      adt:      [+12.4, +16.0, +19.7, +22.4, +26.7, +22.0, +23.9, +23.2, +19.1],
+      epp:      [ -4.0, +49.5, +55.4, +55.1, +80.0, +94.3, +81.6, +69.3, -28.1],
+      discCore: [ +2.2,  -5.3, +39.8, +49.5, +50.3, +21.5, +50.3, +48.7, -12.8],
     },
     summary: [
       '<b>EPP film reached higher in M1</b> (31.6% vs 6.8% Pricing, Wk 4-5); <b>Pricing film reached higher in M2</b> (68.9% vs 17.5% EPP, Wk 6-7) — reach shifted between months',
@@ -1122,6 +1259,18 @@ function renderTimeline(cityKey) {
   const c = CITIES[cityKey];
   const strip = document.getElementById('weekStrip');
   strip.innerHTML = '';
+  const uplift = new Set(c.uplift_weeks || []);
+  // Uplift band behind week nodes
+  if (uplift.size > 0) {
+    const band = document.createElement('div');
+    band.className = 'uplift-band';
+    for (let w = 1; w <= 9; w++) {
+      const c_ = document.createElement('div');
+      c_.className = 'u-cell' + (uplift.has(w) ? ' on' : '');
+      band.appendChild(c_);
+    }
+    strip.appendChild(band);
+  }
   const trackLine = document.createElement('div');
   trackLine.className = 'track-line';
   strip.appendChild(trackLine);
@@ -1129,12 +1278,42 @@ function renderTimeline(cityKey) {
     const cell = document.createElement('div');
     cell.className = 'week-cell';
     const hasEvent = c.events[w] !== undefined;
+    const hasUplift = uplift.has(w);
     cell.innerHTML = `
       <div class="week-label">WEEK ${w}</div>
-      <div class="week-node${hasEvent ? ' event' : ''}">W${w}</div>
+      <div class="week-node${hasEvent ? ' event' : ''}${hasUplift ? ' uplift' : ''}">W${w}</div>
       ${hasEvent ? '<div class="connector"></div>' : ''}
     `;
     strip.appendChild(cell);
+  }
+  // Compact week strip above business metrics chart
+  const bizStrip = document.getElementById('bizWeekStrip');
+  if (bizStrip) {
+    bizStrip.innerHTML = '';
+    for (let w = 1; w <= 9; w++) {
+      const cell = document.createElement('div');
+      const classes = ['bw'];
+      if (uplift.has(w)) classes.push('uplift');
+      if (c.events[w] !== undefined) classes.push('event');
+      cell.className = classes.join(' ');
+      cell.innerHTML = `W${w}${c.events[w] !== undefined ? '<span class="dot"></span>' : ''}`;
+      bizStrip.appendChild(cell);
+    }
+  }
+
+  // Business summary card
+  const bizCard = document.getElementById('bizSummary');
+  if (bizCard) {
+    if (uplift.size > 0) {
+      const weeksTxt = [...uplift].sort((a,b)=>a-b).map(w => `<span class="weeks">W${w}</span>`).join('');
+      const narrative = c.biz_summary || '';
+      bizCard.className = 'biz-summary';
+      bizCard.innerHTML = `<span class="sw"></span><div><b>Business uplift weeks:</b> ${weeksTxt} &nbsp;&nbsp; ${narrative}</div>`;
+    } else {
+      const narrative = c.biz_summary || 'No consistent business uplift pattern.';
+      bizCard.className = 'biz-summary none';
+      bizCard.innerHTML = `<span class="sw" style="background:rgba(239,68,68,.2);border-color:#dc2626;"></span><div><b>No business uplift weeks flagged</b> — ${narrative}</div>`;
+    }
   }
   const row = document.getElementById('eventRow');
   row.innerHTML = '';
@@ -1748,8 +1927,13 @@ document.querySelectorAll('.tab').forEach(t => {
 // ============ TIMELINE STICKY-COMPACT ============
 window.addEventListener('scroll', () => {
   const el = document.querySelector('.timeline');
-  if (window.scrollY > 40) el.classList.add('compact');
-  else el.classList.remove('compact');
+  if (window.scrollY > 40) {
+    el.classList.add('compact');
+    document.body.classList.add('scrolled');
+  } else {
+    el.classList.remove('compact');
+    document.body.classList.remove('scrolled');
+  }
 });
 
 // ============ INITIAL LOAD ============
