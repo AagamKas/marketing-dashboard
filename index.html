@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>Pilots 1–5 — Marketing Performance Dashboard</title>
@@ -179,6 +180,7 @@
   .vtr-table td.creative { font-weight: 600; font-size: 11.5px; letter-spacing: 0.5px; }
   .vtr-table td.creative.brand { color: #1e40af; background: rgba(30,64,175,.06); }
   .vtr-table td.creative.epp { color: #d97706; background: rgba(217,119,6,.08); }
+  .vtr-table td.creative.pricing { color: #7c3aed; background: rgba(124,58,237,.08); }
   .vtr-table td.hero { font-weight: 700; color: #1F4E78; background: rgba(59,130,246,.06); }
   .table-toggle {
     display: inline-flex; align-items: center; gap: 8px;
@@ -271,7 +273,7 @@
 
   <div class="tabs" id="cityTabs">
     <div class="tab-group-label p1">PILOT 1</div>
-    <div class="tab" data-city="Kolkata">Kolkata</div>
+    <div class="tab active" data-city="Kolkata">Kolkata</div>
     <div class="tab" data-city="Lucknow">Lucknow</div>
     <div class="tab" data-city="Mumbai">Mumbai</div>
     <div class="tab" data-city="Patna">Patna</div>
@@ -279,7 +281,7 @@
     <div class="tab-group-label p2">PILOT 2</div>
     <div class="tab" data-city="Bangalore">Bangalore</div>
     <div class="tab" data-city="Noida">Noida</div>
-    <div class="tab active" data-city="Raipur">Raipur</div>
+    <div class="tab" data-city="Raipur">Raipur</div>
     <div class="tab-divider"></div>
     <div class="tab-group-label p3">PILOT 3</div>
     <div class="tab" data-city="Delhi">Delhi</div>
@@ -293,7 +295,7 @@
   </div>
 
   <div class="title-row">
-    <h1 id="cityTitle">Raipur  ·  Pilot 2</h1>
+    <h1 id="cityTitle">Kolkata  ·  Pilot 1</h1>
     <span class="pill">Wk 1 – Wk 9</span>
     <span class="subtitle">Timeline of interventions and marketing/business impact</span>
   </div>
@@ -310,8 +312,8 @@
       <div class="connector"></div>
     </div><div class="week-cell">
       <div class="week-label">WEEK 2</div>
-      <div class="week-node">W2</div>
-      
+      <div class="week-node event">W2</div>
+      <div class="connector"></div>
     </div><div class="week-cell">
       <div class="week-label">WEEK 3</div>
       <div class="week-node">W3</div>
@@ -322,16 +324,16 @@
       <div class="connector"></div>
     </div><div class="week-cell">
       <div class="week-label">WEEK 5</div>
-      <div class="week-node">W5</div>
-      
+      <div class="week-node event">W5</div>
+      <div class="connector"></div>
     </div><div class="week-cell">
       <div class="week-label">WEEK 6</div>
-      <div class="week-node">W6</div>
-      
+      <div class="week-node event">W6</div>
+      <div class="connector"></div>
     </div><div class="week-cell">
       <div class="week-label">WEEK 7</div>
-      <div class="week-node">W7</div>
-      
+      <div class="week-node event">W7</div>
+      <div class="connector"></div>
     </div><div class="week-cell">
       <div class="week-label">WEEK 8</div>
       <div class="week-node">W8</div>
@@ -343,29 +345,57 @@
     </div></div>
     <div class="event-row" id="eventRow"><div>
         <div class="event-card">
-          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"></circle><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"></path></svg></div>
+          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><line x1="7" y1="4" x2="7" y2="20"></line><line x1="17" y1="4" x2="17" y2="20"></line><line x1="2" y1="8" x2="7" y2="8"></line><line x1="2" y1="16" x2="7" y2="16"></line><line x1="17" y1="8" x2="22" y2="8"></line><line x1="17" y1="16" x2="22" y2="16"></line></svg></div>
           <div class="content">
             <div class="lbl">WEEK 1</div>
-            <ul><li>Brand film went live</li><li>Search went live</li><li>Influencer marketing went live</li><li>Auction-based buy live from day 1</li></ul>
+            <ul><li>Brand film went live</li><li>Search went live</li></ul>
           </div>
-        </div></div><div></div><div></div><div>
+        </div></div><div>
+        <div class="event-card">
+          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"></circle><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path></svg></div>
+          <div class="content">
+            <div class="lbl">WEEK 2</div>
+            <ul><li>Forum Mall — Backlit went live</li></ul>
+          </div>
+        </div></div><div></div><div>
         <div class="event-card">
           <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><polygon points="10,9 15,12 10,15" fill="currentColor"></polygon></svg></div>
           <div class="content">
             <div class="lbl">WEEK 4</div>
-            <ul><li>Pricing film went live</li><li>Influencer paused</li></ul>
+            <ul><li>EPP film went live</li></ul>
           </div>
-        </div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div></div><div>
+        <div class="event-card">
+          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8v18l-18-8v-2z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg></div>
+          <div class="content">
+            <div class="lbl">WEEK 5</div>
+            <ul><li>Influencer marketing went live</li></ul>
+          </div>
+        </div></div><div>
+        <div class="event-card">
+          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"></circle><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"></path></svg></div>
+          <div class="content">
+            <div class="lbl">WEEK 6</div>
+            <ul><li>Auction-based buy went live</li></ul>
+          </div>
+        </div></div><div>
+        <div class="event-card pause">
+          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg></div>
+          <div class="content">
+            <div class="lbl">WEEK 7</div>
+            <ul><li>Influencer paused</li></ul>
+          </div>
+        </div></div><div></div><div></div></div>
   </div>
 
   <!-- ============ META MARKETING METRICS ============ -->
   <div class="chart-panel" id="mktPanel1">
-    <h2 id="mktTitle1">Meta Marketing Metrics — Reach %, Frequency, 3-sec &amp; 75% VTR</h2>
-    <div class="legend-row" id="legendRowMkt"><div class="legend-item"><span class="legend-swatch" style="background:rgb(59,130,246);"></span>Reach %</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(139,92,246);"></span>Frequency</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(217,119,6);"></span>3-sec VTR %</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(16,185,129);"></span>75% VTR %</div><div class="legend-note">Universe: M1 150.6K → M2 144.4K · Left axis: Reach % · Right axis: Frequency &amp; VTR %</div></div>
+    <h2 id="mktTitle1">Meta Marketing Metrics — Reach %, Frequency &amp; 3-sec VTR</h2>
+    <div class="legend-row" id="legendRowMkt"><div class="legend-item"><span class="legend-swatch" style="background:rgb(59,130,246);"></span>Reach %</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(139,92,246);"></span>Frequency</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(217,119,6);"></span>3-sec VTR %</div><div class="legend-note">Universe: M1 359.2K → M2 347.1K · Left axis: Reach % · Right axis: Frequency &amp; VTR %</div></div>
     <div class="chart-area" style="height: 320px;">
       <canvas id="chartMkt" style="box-sizing: border-box; display: block; height: 320px; width: 1441px;" width="1080" height="240"></canvas>
     </div>
-    <div class="disclaimer" id="mktDisclaimer1"><span class="dot">*</span> Reach, Frequency, 3-sec &amp; 75% VTR reported <b>by creative</b>: Week 1-3 = <b>Brand film (45s)</b>, Week 4-9 = <b>Pricing film (26s)</b>. 75% VTR is where <b>price is communicated</b>.</div>
+    <div class="disclaimer" id="mktDisclaimer1"><span class="dot">*</span> Reach, Frequency and 3-sec VTR are reported <b>by creative</b>: Week 1-3 = <b>Brand film (45s)</b>, Week 4-9 = <b>EPP film (21s)</b>. 3-sec VTR marker on Week 4-5 shows where <b>price is communicated</b>.</div>
   </div>
 
   <!-- ============ SECOND META CHART (only P3/P4/P5) ============ -->
@@ -373,7 +403,7 @@
     <h2 id="mktTitle2">Meta Marketing Metrics — Pricing film (26s, also communicates about EPP)</h2>
     <div class="legend-row" id="legendRowMkt2"><div class="legend-item"><span class="legend-swatch" style="background:rgb(59,130,246);"></span>Reach %</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(139,92,246);"></span>Frequency</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(217,119,6);"></span>3-sec VTR %</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(16,185,129);"></span>75% VTR %</div><div class="legend-note">Universe: M1 549.3K → M2 506.3K · Left axis: Reach % · Right axis: Frequency &amp; VTR %</div></div>
     <div class="chart-area" style="height: 320px;">
-      <canvas id="chartMkt2" style="box-sizing: border-box; display: block; height: 320px; width: 1441px;" width="1080" height="240"></canvas>
+      <canvas id="chartMkt2" width="1080" height="240" style="display: block; box-sizing: border-box; height: 320px; width: 1441px;"></canvas>
     </div>
     <div class="disclaimer" id="mktDisclaimer2"><span class="dot">*</span> <b>Pricing film (26s)</b> ran alongside <b>EPP film (21s)</b>. Reach/Freq/VTR shown separately per creative. Wk 1-3 point reuses the Brand film (45s) baseline so both charts share the same x-axis. Pricing communication appears to have <b>resonated better</b> based on reach and 75% completion depth.</div>
   </div>
@@ -382,53 +412,73 @@
   <div class="chart-panel collapsible open" id="vtrPanel">
     <h2 class="collapsible-header" onclick="togglePanel(&#39;vtrPanel&#39;)">
       <span class="section-arrow">▶</span>
-      VTR Breakdown — depth of viewership by phase
+      <span id="vtrPanel1Title">VTR Breakdown — depth of viewership by phase</span>
       <span class="panel-hint">click to expand</span>
     </h2>
     <div class="collapsible-body">
-      <div class="subtitle-inline">3-sec = attention. 25% / 50% / 75% / 100% = how deep viewers went into the film.</div>
+      <div class="subtitle-inline" id="vtrSubtitle">3-sec = attention. 25% / 50% / 75% / 100% = how deep viewers went into the film.</div>
       <div class="legend-row" id="legendRowVTR"><div class="legend-item"><span class="legend-swatch" style="background:rgb(217,119,6);"></span>3-sec VTR</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(59,130,246);"></span>25% VTR</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(139,92,246);"></span>50% VTR</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(16,185,129);"></span>75% VTR</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(220,38,38);"></span>100% VTR</div></div>
       <div class="chart-area" style="height: 300px;"><canvas id="chartVTR" style="box-sizing: border-box; display: block; height: 300px; width: 1441px;" width="1080" height="225"></canvas></div>
-      <div class="table-toggle open" id="vtrToggle" onclick="toggleVtrTable(event)">
-        <span class="arrow">▶</span> Hide detailed VTR breakdown table
-      </div>
-      <div class="table-collapse open" id="vtrTableWrap">
-        <table class="vtr-table" id="vtrTable"><thead><tr>
+    </div>
+  </div>
+
+  <!-- ============ VTR BREAKDOWN — Pricing film (only P3/4/5) ============ -->
+  <div class="chart-panel collapsible open" id="vtrPanel2" style="display: none;">
+    <h2 class="collapsible-header" onclick="togglePanel(&#39;vtrPanel2&#39;)">
+      <span class="section-arrow">▶</span>
+      VTR Breakdown — Pricing film (Brand + Pricing)
+      <span class="panel-hint">click to expand</span>
+    </h2>
+    <div class="collapsible-body">
+      <div class="subtitle-inline">3-sec = attention. 25% / 50% / 75% / 100% = how deep viewers went into the Pricing film.</div>
+      <div class="legend-row" id="legendRowVTR2"><div class="legend-item"><span class="legend-swatch" style="background:rgb(217,119,6);"></span>3-sec VTR</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(59,130,246);"></span>25% VTR</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(139,92,246);"></span>50% VTR</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(16,185,129);"></span>75% VTR</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(220,38,38);"></span>100% VTR</div></div>
+      <div class="chart-area" style="height: 300px;"><canvas id="chartVTR2" style="box-sizing: border-box; display: block; height: 300px; width: 1441px;" width="1080" height="225"></canvas></div>
+    </div>
+  </div>
+
+  <!-- ============ VTR TABLE (below both charts) ============ -->
+  <div class="chart-panel collapsible open" id="vtrTablePanel">
+    <h2 class="collapsible-header" onclick="togglePanel(&#39;vtrTablePanel&#39;)">
+      <span class="section-arrow">▶</span>
+      VTR Breakdown — detailed table
+      <span class="panel-hint">click to expand</span>
+    </h2>
+    <div class="collapsible-body">
+      <table class="vtr-table" id="vtrTable"><thead><tr>
     <th>Phase</th><th>Creative</th><th>3-sec VTR</th><th>25% VTR</th><th>50% VTR</th><th>75% VTR</th><th>100% VTR</th>
   </tr></thead><tbody><tr>
     <td class="phase">Wk 1-3</td>
     <td class="creative brand">Brand film</td>
-    <td class="hero">9.1%</td>
-    <td>1.3%</td>
-    <td>0.4%</td>
-    <td>0.2%</td>
+    <td class="hero">13.5%</td>
+    <td>2.6%</td>
+    <td>0.9%</td>
+    <td>0.6%</td>
     <td>0.1%</td>
   </tr><tr>
     <td class="phase">Wk 4-5</td>
     <td class="creative epp">EPP film</td>
-    <td class="hero">5.3%</td>
-    <td>2.6%</td>
-    <td>1.0%</td>
-    <td>0.5%</td>
-    <td>0.3%</td>
+    <td class="hero">13.3%</td>
+    <td>6.3%</td>
+    <td>3.0%</td>
+    <td>1.1%</td>
+    <td>0.7%</td>
   </tr><tr>
     <td class="phase">Wk 6-7</td>
     <td class="creative epp">EPP film</td>
-    <td class="hero">4.5%</td>
-    <td>2.1%</td>
+    <td class="hero">9.6%</td>
+    <td>4.0%</td>
+    <td>1.6%</td>
     <td>0.8%</td>
     <td>0.4%</td>
-    <td>0.2%</td>
   </tr><tr>
     <td class="phase">Wk 6-9</td>
     <td class="creative epp">EPP film</td>
-    <td class="hero">4.8%</td>
-    <td>2.2%</td>
+    <td class="hero">9.6%</td>
+    <td>4.0%</td>
+    <td>1.6%</td>
     <td>0.8%</td>
-    <td>0.4%</td>
-    <td>0.2%</td>
+    <td>0.5%</td>
   </tr></tbody></table>
-      </div>
     </div>
   </div>
 
@@ -437,13 +487,13 @@
     <h2 class="collapsible-header" onclick="togglePanel(&#39;searchPanel&#39;)">
       <span class="section-arrow">▶</span>
       Search — Brand vs Generic
-      <span class="query-pill" id="brandQueryPill">Brand · 6,420</span>
-      <span class="query-pill" id="genericQueryPill" style="background:linear-gradient(135deg,#e6f7ec,#d1f0dc);color:#166534;border-color:#a7e0ba;">Generic · 12,300</span>
+      <span class="query-pill" id="brandQueryPill">Brand · 44,910</span>
+      <span class="query-pill" id="genericQueryPill" style="background:linear-gradient(135deg,#e6f7ec,#d1f0dc);color:#166534;border-color:#a7e0ba;">Generic · 71,440</span>
       <span class="panel-hint">click to expand</span>
     </h2>
     <div class="collapsible-body">
       <div class="subtitle-inline" id="searchSubtitle">City-level Impressions &amp; CTR · SOV % is pilot aggregate</div>
-      <div class="legend-row" id="legendRowSearch"><div class="legend-item"><span class="legend-swatch" style="background:rgb(30,64,175);"></span>Impressions — Brand</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(16,185,129);"></span>Impressions — Generic</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(139,92,246);"></span>CTR % (right axis)</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(217,119,6);"></span>SOV % — Pilot 2 (right axis, dashed)</div></div>
+      <div class="legend-row" id="legendRowSearch"><div class="legend-item"><span class="legend-swatch" style="background:rgb(30,64,175);"></span>Impressions — Brand</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(16,185,129);"></span>Impressions — Generic</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(139,92,246);"></span>CTR % (right axis)</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(217,119,6);"></span>SOV % — Pilot 1 (right axis, dashed)</div></div>
       <div class="search-split">
         <div>
           <div class="search-half-title brand">Brand Search</div>
@@ -460,8 +510,8 @@
 
   <!-- ============ BUSINESS METRICS ============ -->
   <div class="chart-panel">
-    <h2>Business Metrics — Overall ADT &amp; Disc Core USD &amp; Disc Rec USD (DiD vs Control)</h2>
-    <div class="legend-row" id="legendRowBiz"><div class="legend-item"><span class="legend-swatch" style="background:rgb(31,78,120);"></span>Overall ADT DiD (pp)</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(217,119,6);"></span>Disc Core USD DiD (pp)</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(220,38,38);"></span>Disc Rec USD DiD (pp)</div><div class="legend-note">Left axis: Overall ADT DiD · Right axis: Disc Core USD + Disc Rec USD · All vs Control (pp)</div></div>
+    <h2>Business Metrics — Overall ADT &amp; EPP USD (DiD vs Control)</h2>
+    <div class="legend-row" id="legendRowBiz"><div class="legend-item"><span class="legend-swatch" style="background:rgb(31,78,120);"></span>Overall ADT DiD (pp)</div><div class="legend-item"><span class="legend-swatch" style="background:rgb(44,122,71);"></span>EPP USD DiD (pp)</div><div class="legend-note">Left axis: Overall ADT DiD · Right axis: EPP USD · All vs Control (pp)</div></div>
     <div class="chart-area" style="height: 320px;"><canvas id="chartBiz" style="box-sizing: border-box; display: block; height: 320px; width: 1441px;" width="1080" height="240"></canvas></div>
   </div>
 
@@ -471,7 +521,7 @@
       <span class="summary-icon">✦</span>
       <h2>Summary</h2>
     </div>
-    <ul class="summary-list" id="summaryList"><li><span class="bullet"></span><div><b>Auction-based buy live from Day 1</b> — Reach overshot universe (1.6M vs 151K) via broad geo-buying; ADT modest overall (+8 to +17pp)</div></li><li><span class="bullet"></span><div><b>Wk 1-3 Influencer window (HIGH CONFIDENCE)</b> — ADT −4pp → +8pp; Disc Rec +28pp → +64pp; Disc Core +2pp → +23pp (peak). Highest uplift observed vs other periods, with <b>low overlap with other interventions</b></div></li><li><span class="bullet"></span><div><b>Post Pricing film (Wk 4)</b> — Overall ADT <b>flat pre/post Wk 4</b> despite high reach in Week 4; <b>Discounted Core largely flat</b> across weeks; <b>Discounted Recruiter flat</b> vs Wk 3-4</div></li></ul>
+    <ul class="summary-list" id="summaryList"><li><span class="bullet"></span><div><b>Reach exploded after auction-based buy</b> — Wk 4-5 reach 98K (27%) → Wk 6-9 <b>824K (238%), ~8x jump</b> post shift</div></li><li><span class="bullet"></span><div><b>Post shift to auction, both ADT and EPP USD increased</b> — <b>EPP USD +80pp</b> (from +97pp Wk 5 to +177pp Wk 9); ADT improved from −6.9pp (Wk 5) to peak +0.9pp (Wk 8). During the same period (Wk 5-6) <b>influencer marketing was also live</b>, so lift is attributable to auction + influencer combo (not isolable)</div></li></ul>
     <div class="attribution-disclaimer">
       <span class="dot">†</span> Attribution to a specific intervention is not clear — multiple levers overlap across weeks, so the observed lift cannot be isolated to one lever.
     </div>
@@ -848,24 +898,23 @@ const CITIES = {
     // EPP film
     meta1: [
       { x: 3, phase: 'Wk 1-3 · Brand film',        reachK: 440.86, freq: 4.0, vtr: 13.1, vtr75: 0.5 },
-      { x: 5, phase: 'Wk 4-5 · EPP film M1 end',   reachK: 221.0,  freq: 2.9, vtr: 13.0, vtr75: 2.5, v100: 0.71 },
-      { x: 7, phase: 'Wk 6-7 · EPP M2 partial',    reachK: 104.0,  freq: 1.3, vtr:  6.3, vtr75: 1.2, v100: 0.3 },
-      { x: 9, phase: 'Wk 6-9 · EPP full M2',       reachK: 114.0,  freq: 1.5, vtr:  6.5, vtr75: 1.3, v100: 0.32 },
+      { x: 5, phase: 'Wk 4-5 · EPP film M1 end',   reachK: 221.0,  freq: 2.9, vtr: 13.0, vtr75: 1.1, v100: 0.7 },
+      { x: 7, phase: 'Wk 6-7 · EPP M2 partial',    reachK: 104.0,  freq: 1.3, vtr:  6.3, vtr75: 0.5, v100: 0.3 },
+      { x: 9, phase: 'Wk 6-9 · EPP full M2',       reachK: 497.6,  freq: 4.6, vtr:  9.9, vtr75: 1.5, v100: 0.8 },
     ],
-    // Pricing film — real data from image (75% VTR + 100% VTR per phase)
     meta2: [
       { x: 5, phase: 'Wk 4-5 · Pricing M1 end',    reachK:  36.0, freq: 2.4, vtr: 8.8, vtr75: 2.60, v100: 0.9 },
       { x: 7, phase: 'Wk 6-7 · Pricing M2 partial',reachK: 370.0, freq: 3.1, vtr: 5.4, vtr75: 1.10, v100: 0.6 },
-      { x: 9, phase: 'Wk 6-9 · Pricing full M2',   reachK: 407.0, freq: 5.5, vtr: 7.0, vtr75: 1.20, v100: 0.65 },
+      { x: 9, phase: 'Wk 6-9 · Pricing full M2',   reachK: 407.0, freq: 5.5, vtr: 10.1, vtr75: 1.6, v100: 0.8 },
     ],
     vtr: [
       { x: 3, phase: 'Wk 1-3 · Brand',        creative: 'Brand',   v3: 13.1, v25: 2.4, v50: 0.8, v75: 0.5, v100: 0.2 },
-      { x: 5, phase: 'Wk 4-5 · EPP M1',       creative: 'EPP',     v3: 13.0, v25: 6.4, v50: 3.0, v75: 2.5, v100: 0.71 },
+      { x: 5, phase: 'Wk 4-5 · EPP M1',       creative: 'EPP',     v3: 13.0, v25: 6.4, v50: 3.2, v75: 1.1, v100: 0.7 },
       { x: 5, phase: 'Wk 4-5 · Pricing M1',   creative: 'Pricing', v3:  8.8, v25: 4.2, v50: 1.9, v75: 2.60, v100: 0.9 },
-      { x: 7, phase: 'Wk 6-7 · EPP M2p',      creative: 'EPP',     v3:  6.3, v25: 3.9, v50: 1.6, v75: 1.2, v100: 0.3 },
+      { x: 7, phase: 'Wk 6-7 · EPP M2p',      creative: 'EPP',     v3:  6.3, v25: 2.5, v50: 1.0, v75: 0.5, v100: 0.3 },
       { x: 7, phase: 'Wk 6-7 · Pricing M2p',  creative: 'Pricing', v3:  5.4, v25: 2.2, v50: 0.9, v75: 1.10, v100: 0.6 },
-      { x: 9, phase: 'Wk 6-9 · EPP full M2',  creative: 'EPP',     v3:  7.0, v25: 2.9, v50: 1.1, v75: 0.5, v100: 0.3 },
-      { x: 9, phase: 'Wk 6-9 · Pricing full', creative: 'Pricing', v3:  8.8, v25: 4.5, v50: 1.9, v75: 1.3, v100: 0.6 },
+      { x: 9, phase: 'Wk 6-9 · EPP full M2',  creative: 'EPP',     v3:  9.9, v25: 5.2, v50: 2.1, v75: 1.5, v100: 0.8 },
+      { x: 9, phase: 'Wk 6-9 · Pricing full', creative: 'Pricing', v3: 10.1, v25: 5.4, v50: 2.2, v75: 1.6, v100: 0.8 },
     ],
     search: {
       brand:   { queryVol: 185560, phases: [
@@ -907,23 +956,23 @@ const CITIES = {
     },
     meta1: [
       { x: 3, phase: 'Wk 1-3 · Brand film',        reachK: 250.08, freq: 3.0, vtr:  8.8, vtr75: 0.4 },
-      { x: 5, phase: 'Wk 4-5 · EPP film M1 end',   reachK: 124.0,  freq: 2.3, vtr:  9.1, vtr75: 1.6, v100: 0.45 },
-      { x: 7, phase: 'Wk 6-7 · EPP M2 partial',    reachK:  52.0,  freq: 1.2, vtr:  4.3, vtr75: 0.6, v100: 0.2 },
-      { x: 9, phase: 'Wk 6-9 · EPP full M2',       reachK:  57.0,  freq: 1.4, vtr:  4.5, vtr75: 0.65, v100: 0.22 },
+      { x: 5, phase: 'Wk 4-5 · EPP film M1 end',   reachK: 124.0,  freq: 2.3, vtr:  9.1, vtr75: 0.7, v100: 0.5 },
+      { x: 7, phase: 'Wk 6-7 · EPP M2 partial',    reachK:  52.0,  freq: 1.2, vtr:  4.3, vtr75: 0.6, v100: 0.3 },
+      { x: 9, phase: 'Wk 6-9 · EPP full M2',       reachK: 352.8,  freq: 4.6, vtr:  7.7, vtr75: 1.0, v100: 0.5 },
     ],
     meta2: [
       { x: 5, phase: 'Wk 4-5 · Pricing M1 end',    reachK:  23.0, freq: 2.3, vtr: 9.2, vtr75: 1.60, v100: 0.64 },
       { x: 7, phase: 'Wk 6-7 · Pricing M2 partial',reachK: 278.0, freq: 3.0, vtr: 5.8, vtr75: 0.73, v100: 0.4 },
-      { x: 9, phase: 'Wk 6-9 · Pricing full M2',   reachK: 306.0, freq: 5.4, vtr: 7.2, vtr75: 0.80, v100: 0.45 },
+      { x: 9, phase: 'Wk 6-9 · Pricing full M2',   reachK: 306.0, freq: 5.4, vtr: 7.2, vtr75: 1.0, v100: 0.45 },
     ],
     vtr: [
       { x: 3, phase: 'Wk 1-3 · Brand',        creative: 'Brand',   v3:  8.8, v25: 1.6, v50: 0.6, v75: 0.4, v100: 0.2 },
-      { x: 5, phase: 'Wk 4-5 · EPP',          creative: 'EPP',     v3:  9.1, v25: 6.8, v50: 3.2, v75: 1.6, v100: 0.45 },
+      { x: 5, phase: 'Wk 4-5 · EPP',          creative: 'EPP',     v3:  9.1, v25: 4.1, v50: 1.9, v75: 0.7, v100: 0.5 },
       { x: 5, phase: 'Wk 4-5 · Pricing',      creative: 'Pricing', v3:  9.2, v25: 4.4, v50: 2.0, v75: 1.60, v100: 0.64 },
-      { x: 7, phase: 'Wk 6-7 · EPP M2p',      creative: 'EPP',     v3:  4.3, v25: 4.2, v50: 1.8, v75: 0.6, v100: 0.2 },
+      { x: 7, phase: 'Wk 6-7 · EPP M2p',      creative: 'EPP',     v3:  4.3, v25: 2.6, v50: 1.6, v75: 0.6, v100: 0.3 },
       { x: 7, phase: 'Wk 6-7 · Pricing M2p',  creative: 'Pricing', v3:  5.8, v25: 2.4, v50: 1.0, v75: 0.73, v100: 0.4 },
-      { x: 9, phase: 'Wk 6-9 · EPP full M2',  creative: 'EPP',     v3:  7.2, v25: 3.0, v50: 1.2, v75: 0.5, v100: 0.3 },
-      { x: 9, phase: 'Wk 6-9 · Pricing full', creative: 'Pricing', v3:  9.3, v25: 4.8, v50: 2.0, v75: 1.4, v100: 0.6 },
+      { x: 9, phase: 'Wk 6-9 · EPP full M2',  creative: 'EPP',     v3:  7.7, v25: 3.9, v50: 1.5, v75: 1.0, v100: 0.5 },
+      { x: 9, phase: 'Wk 6-9 · Pricing full', creative: 'Pricing', v3:  7.8, v25: 4.0, v50: 1.6, v75: 1.0, v100: 0.5 },
     ],
     search: {
       brand:   { queryVol: 50760, phases: [
@@ -963,22 +1012,22 @@ const CITIES = {
     meta1: [
       { x: 3, phase: 'Wk 1-3 · Brand film',        reachK: 1891.97, freq: 1.0, vtr: 8.5, vtr75: 0.2 },
       { x: 5, phase: 'Wk 4-5 · EPP film M1 end',   reachK:  572.0,  freq: 1.0, vtr: 5.0, vtr75: 0.4, v100: 0.2 },
-      { x: 7, phase: 'Wk 6-7 · EPP M2 partial',    reachK:   35.0,  freq: 1.0, vtr: 3.4, vtr75: 0.3, v100: 0.14 },
-      { x: 9, phase: 'Wk 6-9 · EPP full M2',       reachK:   39.0,  freq: 1.0, vtr: 3.5, vtr75: 0.32, v100: 0.15 },
+      { x: 7, phase: 'Wk 6-7 · EPP M2 partial',    reachK:   35.0,  freq: 1.0, vtr: 3.4, vtr75: 0.3, v100: 0.1 },
+      { x: 9, phase: 'Wk 6-9 · EPP full M2',       reachK:   87.9,  freq: 1.0, vtr: 3.5, vtr75: 0.2, v100: 0.1 },
     ],
     meta2: [
       { x: 5, phase: 'Wk 4-5 · Pricing M1 end',    reachK: 1593.0, freq: 2.3, vtr: 8.0, vtr75: 0.46, v100: 0.26 },
       { x: 7, phase: 'Wk 6-7 · Pricing M2 partial',reachK:  534.0, freq: 3.1, vtr: 4.8, vtr75: 0.31, v100: 0.17 },
-      { x: 9, phase: 'Wk 6-9 · Pricing full M2',   reachK:  587.0, freq: 5.6, vtr: 6.4, vtr75: 0.34, v100: 0.19 },
+      { x: 9, phase: 'Wk 6-9 · Pricing full M2',   reachK: 1055.3, freq: 1.4, vtr: 3.6, vtr75: 0.3, v100: 0.19 },
     ],
     vtr: [
       { x: 3, phase: 'Wk 1-3 · Brand',        creative: 'Brand',   v3:  8.5, v25: 1.1, v50: 0.4, v75: 0.2, v100: 0.1 },
-      { x: 5, phase: 'Wk 4-5 · EPP',          creative: 'EPP',     v3:  5.0, v25: 5.8, v50: 2.7, v75: 0.4, v100: 0.2 },
+      { x: 5, phase: 'Wk 4-5 · EPP',          creative: 'EPP',     v3:  5.0, v25: 1.8, v50: 0.7, v75: 0.4, v100: 0.2 },
       { x: 5, phase: 'Wk 4-5 · Pricing',      creative: 'Pricing', v3:  8.0, v25: 3.8, v50: 1.6, v75: 0.46, v100: 0.26 },
-      { x: 7, phase: 'Wk 6-7 · EPP M2p',      creative: 'EPP',     v3:  3.4, v25: 3.6, v50: 1.5, v75: 0.3, v100: 0.14 },
+      { x: 7, phase: 'Wk 6-7 · EPP M2p',      creative: 'EPP',     v3:  3.4, v25: 1.1, v50: 0.5, v75: 0.3, v100: 0.1 },
       { x: 7, phase: 'Wk 6-7 · Pricing M2p',  creative: 'Pricing', v3:  4.8, v25: 1.9, v50: 0.8, v75: 0.31, v100: 0.17 },
-      { x: 9, phase: 'Wk 6-9 · EPP full M2',  creative: 'EPP',     v3:  6.4, v25: 2.6, v50: 1.0, v75: 0.4, v100: 0.3 },
-      { x: 9, phase: 'Wk 6-9 · Pricing full', creative: 'Pricing', v3:  8.1, v25: 4.2, v50: 1.7, v75: 1.2, v100: 0.5 },
+      { x: 9, phase: 'Wk 6-9 · EPP full M2',  creative: 'EPP',     v3:  3.5, v25: 1.2, v50: 0.4, v75: 0.2, v100: 0.1 },
+      { x: 9, phase: 'Wk 6-9 · Pricing full', creative: 'Pricing', v3:  3.6, v25: 1.6, v50: 0.6, v75: 0.3, v100: 0.2 },
     ],
     search: {
       brand:   { queryVol: 7710, phases: [
@@ -1020,23 +1069,23 @@ const CITIES = {
     },
     meta1: [
       { x: 3, phase: 'Wk 1-3 · Brand film',        reachK: 324.09, freq: 5.0, vtr:  7.0, vtr75: 0.2 },
-      { x: 5, phase: 'Wk 4-5 · EPP film M1 end',   reachK: 173.0,  freq: 2.5, vtr:  6.7, vtr75: 1.2, v100: 0.32 },
-      { x: 7, phase: 'Wk 6-7 · EPP M2 partial',    reachK:  88.0,  freq: 1.4, vtr:  4.4, vtr75: 0.7, v100: 0.2 },
-      { x: 9, phase: 'Wk 6-9 · EPP full M2',       reachK:  97.0,  freq: 1.5, vtr:  4.6, vtr75: 0.75, v100: 0.22 },
+      { x: 5, phase: 'Wk 4-5 · EPP film M1 end',   reachK: 173.0,  freq: 2.5, vtr:  6.7, vtr75: 0.5, v100: 0.3 },
+      { x: 7, phase: 'Wk 6-7 · EPP M2 partial',    reachK:  88.0,  freq: 1.4, vtr:  4.4, vtr75: 0.3, v100: 0.2 },
+      { x: 9, phase: 'Wk 6-9 · EPP full M2',       reachK: 109.1,  freq: 1.4, vtr:  5.2, vtr75: 0.4, v100: 0.3 },
     ],
     meta2: [
       { x: 5, phase: 'Wk 4-5 · Pricing M1 end',    reachK:  38.0, freq: 2.4, vtr: 8.9, vtr75: 0.88, v100: 0.4 },
       { x: 7, phase: 'Wk 6-7 · Pricing M2 partial',reachK: 349.0, freq: 3.1, vtr: 5.6, vtr75: 0.44, v100: 0.3 },
-      { x: 9, phase: 'Wk 6-9 · Pricing full M2',   reachK: 384.0, freq: 5.5, vtr: 7.0, vtr75: 0.48, v100: 0.33 },
+      { x: 9, phase: 'Wk 6-9 · Pricing full M2',   reachK: 384.0, freq: 6.9, vtr: 7.0, vtr75: 0.7, v100: 0.4 },
     ],
     vtr: [
       { x: 3, phase: 'Wk 1-3 · Brand',        creative: 'Brand',   v3:  7.0, v25: 1.1, v50: 0.4, v75: 0.2, v100: 0.1 },
-      { x: 5, phase: 'Wk 4-5 · EPP',          creative: 'EPP',     v3:  6.7, v25: 6.6, v50: 3.1, v75: 1.2, v100: 0.32 },
+      { x: 5, phase: 'Wk 4-5 · EPP',          creative: 'EPP',     v3:  6.7, v25: 2.7, v50: 1.1, v75: 0.5, v100: 0.3 },
       { x: 5, phase: 'Wk 4-5 · Pricing',      creative: 'Pricing', v3:  8.9, v25: 4.3, v50: 1.9, v75: 0.88, v100: 0.4 },
-      { x: 7, phase: 'Wk 6-7 · EPP M2p',      creative: 'EPP',     v3:  4.4, v25: 4.0, v50: 1.7, v75: 0.7, v100: 0.2 },
+      { x: 7, phase: 'Wk 6-7 · EPP M2p',      creative: 'EPP',     v3:  4.4, v25: 1.7, v50: 0.6, v75: 0.3, v100: 0.2 },
       { x: 7, phase: 'Wk 6-7 · Pricing M2p',  creative: 'Pricing', v3:  5.6, v25: 2.3, v50: 0.9, v75: 0.44, v100: 0.3 },
-      { x: 9, phase: 'Wk 6-9 · EPP full M2',  creative: 'EPP',     v3:  7.0, v25: 2.9, v50: 1.1, v75: 0.5, v100: 0.3 },
-      { x: 9, phase: 'Wk 6-9 · Pricing full', creative: 'Pricing', v3:  9.0, v25: 4.7, v50: 2.0, v75: 1.4, v100: 0.6 },
+      { x: 9, phase: 'Wk 6-9 · EPP full M2',  creative: 'EPP',     v3:  5.2, v25: 2.0, v50: 0.8, v75: 0.4, v100: 0.3 },
+      { x: 9, phase: 'Wk 6-9 · Pricing full', creative: 'Pricing', v3:  6.7, v25: 3.3, v50: 1.3, v75: 0.7, v100: 0.4 },
     ],
     search: {
       brand:   { queryVol: 91090, phases: [
@@ -1320,8 +1369,7 @@ function renderMkt(cityKey) {
   }
 }
 
-function renderVTR(cityKey) {
-  const c = CITIES[cityKey];
+function _buildVtrChart(canvasId, legendId, city, filteredData, otherFilmLabel) {
   const levels = [
     { key: 'v3',   label: '3-sec VTR',  color: 'rgb(217,119,6)' },
     { key: 'v25',  label: '25% VTR',    color: 'rgb(59,130,246)' },
@@ -1329,7 +1377,7 @@ function renderVTR(cityKey) {
     { key: 'v75',  label: '75% VTR',    color: 'rgb(16,185,129)' },
     { key: 'v100', label: '100% VTR',   color: 'rgb(220,38,38)' },
   ];
-  const legend = document.getElementById('legendRowVTR');
+  const legend = document.getElementById(legendId);
   legend.innerHTML = '';
   levels.forEach(l => {
     const el = document.createElement('div'); el.className = 'legend-item';
@@ -1337,27 +1385,15 @@ function renderVTR(cityKey) {
     legend.appendChild(el);
   });
 
-  // Table
-  const tbl = document.getElementById('vtrTable');
-  tbl.innerHTML = `<thead><tr>
-    <th>Phase</th><th>Creative</th><th>3-sec VTR</th><th>25% VTR</th><th>50% VTR</th><th>75% VTR</th><th>100% VTR</th>
-  </tr></thead><tbody>` + c.vtr.map(p => `<tr>
-    <td class="phase">${p.phase.split(' · ')[0]}</td>
-    <td class="creative ${p.creative === 'Brand' ? 'brand' : 'epp'}">${p.creative === 'Brand' ? 'Brand film' : 'EPP film'}</td>
-    <td class="hero">${p.v3.toFixed(1)}%</td>
-    <td>${p.v25.toFixed(1)}%</td>
-    <td>${p.v50.toFixed(1)}%</td>
-    <td>${p.v75.toFixed(1)}%</td>
-    <td>${p.v100.toFixed(1)}%</td>
-  </tr>`).join('') + '</tbody>';
-
-  destroyChart('chartVTR');
-  charts.chartVTR = new Chart(document.getElementById('chartVTR'), {
+  destroyChart(canvasId);
+  const maxV3 = Math.max(...filteredData.map(p => p.v3 || 0));
+  const yLbl = Math.max(9, maxV3 * 0.95);
+  charts[canvasId] = new Chart(document.getElementById(canvasId), {
     type: 'line',
     data: {
       datasets: levels.map(l => ({
         label: l.label,
-        data: c.vtr.map(p => ({ x: p.x, y: p[l.key], phase: p.phase })),
+        data: filteredData.map(p => ({ x: p.x, y: p[l.key], phase: p.phase })),
         borderColor: l.color, pointBackgroundColor: l.color, pointBorderColor: '#fff', pointBorderWidth: 2,
         pointRadius: 6, pointHoverRadius: 9, borderWidth: 2.5, tension: 0.3, fill: false
       }))
@@ -1366,16 +1402,37 @@ function renderVTR(cityKey) {
       responsive: true, maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
-        datalabels: {
-          ...CLEAN_LABEL,
-          formatter: (value) => value.y.toFixed(1) + '%',
-        },
+        datalabels: { ...CLEAN_LABEL, formatter: (value) => value.y.toFixed(1) + '%' },
         tooltip: {
           backgroundColor: 'rgba(15,23,42,.95)', titleColor: '#fff', bodyColor: '#e2e8f0',
           padding: 10, cornerRadius: 6, displayColors: true, boxWidth: 8, boxHeight: 8,
           callbacks: { title: ctx => ctx[0].raw.phase, label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(1)}%` }
         },
-        annotation: { annotations: eventAnnotations(c) }
+        annotation: {
+          annotations: {
+            ...eventAnnotations(city),
+            phaseDivider: {
+              type: 'line', xMin: 3.5, xMax: 3.5,
+              borderColor: 'rgba(31,78,120,.55)', borderWidth: 2, borderDash: [8, 4],
+            },
+            phaseBrandLbl: {
+              type: 'label', xValue: 1.5, yValue: yLbl,
+              content: 'Brand film (45s) →',
+              backgroundColor: 'rgba(255,255,255,.94)',
+              borderColor: 'rgba(31,78,120,.55)', borderWidth: 1,
+              color: '#1F4E78', font: { size: 10, weight: 'bold' },
+              padding: { top: 4, bottom: 4, left: 8, right: 8 }, borderRadius: 4,
+            },
+            phaseOtherLbl: {
+              type: 'label', xValue: 8.3, yValue: yLbl,
+              content: `← ${otherFilmLabel}`,
+              backgroundColor: 'rgba(255,255,255,.94)',
+              borderColor: 'rgba(31,78,120,.55)', borderWidth: 1,
+              color: '#1F4E78', font: { size: 10, weight: 'bold' },
+              padding: { top: 4, bottom: 4, left: 8, right: 8 }, borderRadius: 4,
+            },
+          }
+        }
       },
       scales: {
         x: { type: 'linear', min: 0.5, max: 9.5,
@@ -1388,6 +1445,44 @@ function renderVTR(cityKey) {
       interaction: { mode: 'index', intersect: false, axis: 'x' }
     }
   });
+}
+
+function renderVTR(cityKey) {
+  const c = CITIES[cityKey];
+  const hasDual = c.vtr.some(p => p.creative === 'Pricing');
+  const panel2 = document.getElementById('vtrPanel2');
+  const panel1Title = document.getElementById('vtrPanel1Title');
+  const vtrSub = document.getElementById('vtrSubtitle');
+
+  // Table always shows ALL rows
+  const tbl = document.getElementById('vtrTable');
+  tbl.innerHTML = `<thead><tr>
+    <th>Phase</th><th>Creative</th><th>3-sec VTR</th><th>25% VTR</th><th>50% VTR</th><th>75% VTR</th><th>100% VTR</th>
+  </tr></thead><tbody>` + c.vtr.map(p => `<tr>
+    <td class="phase">${p.phase.split(' · ')[0]}</td>
+    <td class="creative ${p.creative === 'Brand' ? 'brand' : (p.creative === 'Pricing' ? 'pricing' : 'epp')}">${p.creative === 'Brand' ? 'Brand film' : (p.creative === 'Pricing' ? 'Pricing film' : 'EPP film')}</td>
+    <td class="hero">${p.v3.toFixed(1)}%</td>
+    <td>${p.v25.toFixed(1)}%</td>
+    <td>${p.v50.toFixed(1)}%</td>
+    <td>${p.v75.toFixed(1)}%</td>
+    <td>${p.v100.toFixed(1)}%</td>
+  </tr>`).join('') + '</tbody>';
+
+  if (hasDual) {
+    panel2.style.display = 'block';
+    if (panel1Title) panel1Title.textContent = 'VTR Breakdown — EPP film (Brand + EPP)';
+    if (vtrSub) vtrSub.innerHTML = '3-sec = attention. 25% / 50% / 75% / 100% = how deep viewers went into the EPP film.';
+    const eppData = c.vtr.filter(p => p.creative !== 'Pricing');
+    const pricingData = c.vtr.filter(p => p.creative !== 'EPP');
+    _buildVtrChart('chartVTR',  'legendRowVTR',  c, eppData,     'EPP film (21s)');
+    _buildVtrChart('chartVTR2', 'legendRowVTR2', c, pricingData, 'Pricing film (26s)');
+  } else {
+    panel2.style.display = 'none';
+    if (panel1Title) panel1Title.textContent = 'VTR Breakdown — depth of viewership by phase';
+    if (vtrSub) vtrSub.innerHTML = '3-sec = attention. 25% / 50% / 75% / 100% = how deep viewers went into the film.';
+    const otherFilm = c.pilot === 'P2' ? 'Pricing film (26s)' : 'EPP film (21s)';
+    _buildVtrChart('chartVTR', 'legendRowVTR', c, c.vtr, otherFilm);
+  }
 }
 
 function renderSearch(cityKey) {
